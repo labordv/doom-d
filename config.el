@@ -2,12 +2,7 @@
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
-(setq lsp-clients-clangd-args '("-j=3"
-                                "--background-index"
-                                "--clang-tidy"
-                                "--completion-style=detailed"
-                                "--header-insertion=never"))
-(after! lsp-clangd (set-lsp-priority! 'clangd 2))
+(set-eglot-client! 'cc-mode '("clangd" "-j=3" "--clang-tidy"))
 
 (defun my-shell-mode-setup-function ()
   (when (and (fboundp 'company-mode)
@@ -15,6 +10,8 @@
     (company-mode -1)))
 
 (add-hook 'shell-mode-hook 'my-shell-mode-setup-function)
+
+(setq projectile-mode-line "Projectile")
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "John Doe"
