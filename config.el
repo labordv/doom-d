@@ -4,18 +4,20 @@
 ;; sync' after modifying this file!
 (set-eglot-client! 'cc-mode '("clangd" "-j=3" "--clang-tidy"))
 
-(defun my-shell-mode-setup-function ()
-  (when (and (fboundp 'company-mode)
-             (file-remote-p default-directory))
-    (company-mode -1)))
 
-(add-hook 'shell-mode-hook 'my-shell-mode-setup-function)
+;; (add-hook 'shell-mode-hook 'my-shell-mode-setup-function)
 
+(setq remote-file-name-inhibit-cache nil)
+(setq tramp-verbose 1)
+(setq vc-ignore-dir-regexp
+      (format "\\(%s\\)\\|\\(%s\\)"
+              vc-ignore-dir-regexp
+              tramp-file-name-regexp))
 (setq projectile-mode-line "Projectile")
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Dmitriy Labor"
+      user-mail-address "labordv@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
