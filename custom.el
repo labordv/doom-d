@@ -5,8 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(delete-by-moving-to-trash nil)
  '(package-selected-packages '(ccls))
- '(require-final-newline nil)
- )
+ '(require-final-newline nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
